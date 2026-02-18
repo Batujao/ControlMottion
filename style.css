@@ -45,10 +45,15 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1rem;
   background: hsl(210, 35%, 6%, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
+}
+@media (min-width: 768px) {
+  nav {
+    padding: 0.75rem 2rem;
+  }
 }
 
 .nav-brand {
@@ -56,7 +61,6 @@ nav {
   align-items: center;
   gap: 0.5rem;
 }
-
 .nav-brand .icon-box {
   width: 28px;
   height: 28px;
@@ -66,13 +70,11 @@ nav {
   align-items: center;
   justify-content: center;
 }
-
 .nav-brand .icon-box svg {
   width: 16px;
   height: 16px;
   color: #fff;
 }
-
 .nav-brand span {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -80,18 +82,21 @@ nav {
   letter-spacing: 0.05em;
   color: var(--foreground);
 }
-
 .nav-brand span em {
   color: var(--primary);
   font-style: normal;
 }
 
 .nav-links {
-  display: flex;
+  display: none;
   gap: 2rem;
   list-style: none;
 }
-
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+}
 .nav-links a {
   font-family: "Montserrat", sans-serif;
   font-size: 0.875rem;
@@ -99,11 +104,92 @@ nav {
   color: hsl(0, 0%, 85%);
   transition: color 0.2s;
 }
-
 .nav-links a:hover {
   color: var(--primary);
 }
 
+.nav-cta {
+  display: none;
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+}
+@media (min-width: 768px) {
+  .nav-cta {
+    display: inline-flex;
+  }
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--foreground);
+  border-radius: 2px;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+}
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  z-index: 49;
+  background: hsl(210, 35%, 6%, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0;
+  gap: 1rem;
+}
+.mobile-menu.active {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}
+.mobile-menu a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(0, 0%, 85%);
+  transition: color 0.2s;
+}
+.mobile-menu a:hover {
+  color: var(--primary);
+}
+
+/* ===== BUTTONS ===== */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -123,7 +209,6 @@ nav {
   cursor: pointer;
   border: none;
 }
-
 .btn-primary:hover {
   background: var(--primary-light);
   transform: translateY(-1px);
@@ -145,7 +230,6 @@ nav {
   transition: background 0.2s;
   cursor: pointer;
 }
-
 .btn-outline:hover {
   background: hsl(142, 72%, 42%, 0.1);
 }
@@ -156,9 +240,8 @@ nav {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 72px;
 }
-
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -166,7 +249,6 @@ nav {
   background-size: cover;
   background-position: center;
 }
-
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -176,17 +258,20 @@ nav {
     hsl(185, 60%, 12%, 0.75) 100%
   );
 }
-
 .hero-content {
   position: relative;
   z-index: 10;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 5rem 2rem;
+  padding: 3rem 1rem;
   width: 100%;
 }
+@media (min-width: 768px) {
+  .hero-content {
+    padding: 5rem 2rem;
+  }
+}
 
-/* ===== HERO FALL-IN ANIMATION ===== */
 @keyframes fall-in {
   0% {
     opacity: 0;
@@ -197,7 +282,6 @@ nav {
     transform: translateY(0);
   }
 }
-
 @keyframes pulse {
   0%,
   100% {
@@ -224,7 +308,6 @@ nav {
   animation: fall-in 0.7s ease-out both;
   animation-delay: 0.1s;
 }
-
 .hero-badge .dot {
   width: 6px;
   height: 6px;
@@ -232,10 +315,9 @@ nav {
   background: var(--primary);
   animation: pulse 2s infinite;
 }
-
 .hero-content h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  font-size: clamp(2rem, 6vw, 3.75rem);
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: 1rem;
@@ -243,11 +325,9 @@ nav {
   animation: fall-in 0.8s ease-out both;
   animation-delay: 0.3s;
 }
-
 .hero-content h1 span {
   color: var(--primary);
 }
-
 .hero-content .subtitle {
   font-size: 1rem;
   margin-bottom: 0.5rem;
@@ -255,7 +335,6 @@ nav {
   animation: fall-in 0.8s ease-out both;
   animation-delay: 0.55s;
 }
-
 .hero-content .sub2 {
   font-size: 0.875rem;
   margin-bottom: 2rem;
@@ -263,7 +342,6 @@ nav {
   animation: fall-in 0.8s ease-out both;
   animation-delay: 0.7s;
 }
-
 .hero-btns {
   display: flex;
   flex-wrap: wrap;
@@ -276,31 +354,42 @@ nav {
 #stats {
   background: hsl(0, 0%, 97%);
 }
-
 .stats-grid {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   border-top: 1px solid hsl(210, 10%, 85%);
   border-bottom: 1px solid hsl(210, 10%, 85%);
 }
-
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 2rem;
+  }
+}
 .stat-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 1.5rem;
+  padding: 1.5rem;
   gap: 0.75rem;
-  border-right: 1px solid hsl(210, 10%, 85%);
   color: hsl(210, 30%, 20%);
+  border-bottom: 1px solid hsl(210, 10%, 85%);
 }
-
+@media (min-width: 768px) {
+  .stat-card {
+    border-bottom: none;
+    border-right: 1px solid hsl(210, 10%, 85%);
+  }
+  .stat-card:last-child {
+    border-right: none;
+  }
+}
 .stat-card:last-child {
-  border-right: none;
+  border-bottom: none;
 }
-
 .stat-icon {
   width: 32px;
   height: 32px;
@@ -311,20 +400,17 @@ nav {
   justify-content: center;
   flex-shrink: 0;
 }
-
 .stat-icon svg {
   width: 16px;
   height: 16px;
   color: var(--primary);
 }
-
 .stat-value {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1.125rem;
   color: hsl(210, 30%, 15%);
 }
-
 .stat-label {
   font-size: 0.75rem;
   color: hsl(210, 10%, 50%);
@@ -333,9 +419,13 @@ nav {
 /* ===== SERVICES ===== */
 #servicos {
   background: hsl(0, 0%, 96%);
-  padding: 5rem 2rem;
+  padding: 4rem 1rem;
 }
-
+@media (min-width: 768px) {
+  #servicos {
+    padding: 5rem 2rem;
+  }
+}
 .section-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -344,7 +434,6 @@ nav {
   margin-bottom: 0.5rem;
   color: hsl(210, 30%, 15%);
 }
-
 .section-divider {
   display: flex;
   align-items: center;
@@ -352,7 +441,6 @@ nav {
   gap: 0.5rem;
   margin-bottom: 2rem;
 }
-
 .section-divider .line {
   height: 1px;
   width: 64px;
@@ -364,15 +452,23 @@ nav {
   border-radius: 50%;
   background: var(--primary);
 }
-
 .services-grid {
   max-width: 1280px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.5rem;
 }
-
+@media (min-width: 640px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 .service-card {
   display: flex;
   flex-direction: column;
@@ -388,12 +484,10 @@ nav {
     transform 0.3s;
   cursor: default;
 }
-
 .service-card:hover {
   border-color: hsl(142, 72%, 42%, 0.5);
   transform: translateY(-4px);
 }
-
 .service-icon {
   width: 64px;
   height: 64px;
@@ -404,13 +498,11 @@ nav {
   justify-content: center;
   margin-bottom: 1rem;
 }
-
 .service-icon svg {
   width: 32px;
   height: 32px;
   color: var(--primary);
 }
-
 .service-card h3 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -418,7 +510,6 @@ nav {
   color: hsl(210, 30%, 15%);
   margin-bottom: 0.75rem;
 }
-
 .service-card p {
   font-size: 0.75rem;
   line-height: 1.7;
@@ -427,28 +518,40 @@ nav {
 
 /* ===== TESTIMONIAL ===== */
 #depoimento {
-  padding: 5rem 2rem;
+  padding: 4rem 1rem;
   background: hsl(210, 30%, 8%);
 }
-
+@media (min-width: 768px) {
+  #depoimento {
+    padding: 5rem 2rem;
+  }
+}
 .testimonial-inner {
   max-width: 1280px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid hsl(210, 20%, 18%);
 }
-
+@media (min-width: 768px) {
+  .testimonial-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .testimonial-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3rem;
+  padding: 2rem;
   background: hsl(210, 25%, 10%);
 }
-
+@media (min-width: 768px) {
+  .testimonial-text {
+    padding: 3rem;
+  }
+}
 .quote-mark {
   font-size: 3rem;
   font-family: Georgia, serif;
@@ -456,7 +559,6 @@ nav {
   margin-bottom: 1rem;
   line-height: 1;
 }
-
 .testimonial-text blockquote {
   font-size: 1.1rem;
   font-style: italic;
@@ -465,7 +567,6 @@ nav {
   font-family: "Open Sans", sans-serif;
   margin-bottom: 1.5rem;
 }
-
 .stars {
   display: flex;
   gap: 4px;
@@ -477,32 +578,32 @@ nav {
   fill: hsl(45, 100%, 55%);
   color: hsl(45, 100%, 55%);
 }
-
 .testimonial-author strong {
   font-family: "Montserrat", sans-serif;
   font-size: 0.875rem;
   color: var(--foreground);
   display: block;
 }
-
 .testimonial-author span {
   font-size: 0.75rem;
   color: var(--muted-fg);
 }
-
 .testimonial-img {
   position: relative;
   overflow: hidden;
-  min-height: 320px;
+  min-height: 240px;
 }
-
+@media (min-width: 768px) {
+  .testimonial-img {
+    min-height: 320px;
+  }
+}
 .testimonial-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top;
 }
-
 .testimonial-img::after {
   content: "";
   position: absolute;
@@ -516,11 +617,15 @@ nav {
 
 /* ===== PARTNERS ===== */
 #parceiros {
-  padding: 4rem 2rem;
+  padding: 3rem 1rem;
   background: hsl(210, 30%, 6%);
   text-align: center;
 }
-
+@media (min-width: 768px) {
+  #parceiros {
+    padding: 4rem 2rem;
+  }
+}
 .partners-label {
   font-family: "Montserrat", sans-serif;
   font-size: 0.75rem;
@@ -530,15 +635,18 @@ nav {
   color: hsl(210, 10%, 50%);
   margin-bottom: 2rem;
 }
-
 .partners-list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 1rem;
 }
-
+@media (min-width: 768px) {
+  .partners-list {
+    gap: 2.5rem;
+  }
+}
 .partner-tag {
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
@@ -551,40 +659,45 @@ nav {
   opacity: 0.7;
   transition: opacity 0.2s;
 }
-
 .partner-tag:hover {
   opacity: 1;
 }
 
 /* ===== CTA ===== */
 #contato {
-  padding: 5rem 2rem;
+  padding: 4rem 1rem;
   background: linear-gradient(
     135deg,
     hsl(210, 35%, 7%) 0%,
     hsl(185, 50%, 12%) 100%
   );
 }
-
+@media (min-width: 768px) {
+  #contato {
+    padding: 5rem 2rem;
+  }
+}
 .cta-inner {
   max-width: 896px;
   margin: 0 auto;
   text-align: center;
 }
-
 .cta-inner h2 {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 1.875rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   color: var(--foreground);
 }
-
+@media (min-width: 768px) {
+  .cta-inner h2 {
+    font-size: 1.875rem;
+  }
+}
 .cta-inner p {
   color: hsl(0, 0%, 65%);
   margin-bottom: 2rem;
 }
-
 .cta-btns {
   display: flex;
   flex-wrap: wrap;
@@ -592,16 +705,19 @@ nav {
   justify-content: center;
   margin-bottom: 3rem;
 }
-
 .contact-info {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   font-size: 0.875rem;
   color: hsl(0, 0%, 55%);
 }
-
+@media (min-width: 768px) {
+  .contact-info {
+    gap: 2rem;
+  }
+}
 .contact-info span {
   display: flex;
   align-items: center;
@@ -621,27 +737,4 @@ footer {
   color: hsl(210, 10%, 45%);
   background: hsl(210, 35%, 4%);
   border-top: 1px solid hsl(210, 20%, 14%);
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-  .stat-card {
-    border-right: none;
-    border-bottom: 1px solid hsl(210, 10%, 85%);
-  }
-  .stat-card:last-child {
-    border-bottom: none;
-  }
-  .testimonial-inner {
-    grid-template-columns: 1fr;
-  }
-  .testimonial-img {
-    min-height: 240px;
-  }
 }

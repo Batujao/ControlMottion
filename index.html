@@ -26,7 +26,6 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <!-- NAVBAR -->
     <nav>
@@ -49,13 +48,8 @@
         <li><a href="#inicio">Início</a></li>
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#depoimento">Sobre Nós</a></li>
-        <li><a href="#contato">Contato</a></li>
       </ul>
-      <a
-        href="#contato"
-        class="btn-primary"
-        style="font-size: 0.75rem; padding: 0.5rem 1rem"
-      >
+      <a href="#contato" class="btn-primary nav-cta">
         <svg
           width="12"
           height="12"
@@ -70,8 +64,17 @@
         </svg>
         Fale Conosco
       </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
-
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#depoimento">Sobre Nós</a>
+      <a href="#contato" class="btn-primary">Fale Conosco</a>
+    </div>
     <!-- HERO -->
     <section id="inicio">
       <div class="hero-bg"></div>
@@ -119,7 +122,6 @@
         </div>
       </div>
     </section>
-
     <!-- STATS -->
     <section id="stats">
       <div class="stats-grid">
@@ -179,7 +181,6 @@
         </div>
       </div>
     </section>
-
     <!-- SERVICES -->
     <section id="servicos">
       <h2 class="section-title">NOSSOS SERVIÇOS</h2>
@@ -266,7 +267,6 @@
         </div>
       </div>
     </section>
-
     <!-- TESTIMONIAL -->
     <section id="depoimento">
       <div class="testimonial-inner">
@@ -318,7 +318,6 @@
         </div>
       </div>
     </section>
-
     <!-- PARTNERS -->
     <section id="parceiros">
       <p class="partners-label">Tecnologia de ponta para o seu negócio</p>
@@ -329,7 +328,6 @@
         <div class="partner-tag">ABB</div>
       </div>
     </section>
-
     <!-- CTA / CONTACT -->
     <section id="contato">
       <div class="cta-inner">
@@ -412,13 +410,11 @@
         </div>
       </div>
     </section>
-
     <!-- FOOTER -->
     <footer>
       &copy; <span id="year"></span> ControlMottion — Automação &amp;
       Instrumentação Elétrica. Todos os direitos reservados.
     </footer>
-
     <script src="script.js"></script>
   </body>
 </html>

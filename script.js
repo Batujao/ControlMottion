@@ -9,7 +9,17 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     var top =
       target.getBoundingClientRect().top + window.pageYOffset - navHeight;
     window.scrollTo({ top: top, behavior: "smooth" });
+
+    // Fechar menu mobile ao clicar
+    document.getElementById("mobileMenu").classList.remove("active");
+    document.getElementById("hamburger").classList.remove("active");
   });
+});
+
+// Hamburger menu
+document.getElementById("hamburger").addEventListener("click", function () {
+  this.classList.toggle("active");
+  document.getElementById("mobileMenu").classList.toggle("active");
 });
 
 // Ano atual no footer
