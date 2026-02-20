@@ -25,30 +25,29 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
+
   <body>
     <!-- NAVBAR -->
     <nav>
-      <div class="nav-brand">
-        <div class="icon-box">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-          </svg>
+      <a href="#inicio" class="nav-brand">
+        <div class="logo-wrapper">
+          <img
+            src="logos/logo controll.png"
+            alt="ControlMotion Logo"
+            class="nav-logo"
+          />
         </div>
         <span>CONTROL<em>MOTION</em></span>
-      </div>
+      </a>
+
       <ul class="nav-links">
         <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre Nós</a></li>
         <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#depoimento">Sobre Nós</a></li>
       </ul>
+
       <a href="#contato" class="btn-primary nav-cta">
         <svg
           width="12"
@@ -62,24 +61,32 @@
             d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 5.18a19.79 19.79 0 01-3.07-8.67A2 2 0 012.87 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
           />
         </svg>
-        Fale Conosco
+        Fale conosco
       </a>
+
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </nav>
+
     <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
       <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre Nós</a>
       <a href="#servicos">Serviços</a>
-      <a href="#depoimento">Sobre Nós</a>
       <a href="#contato" class="btn-primary">Fale Conosco</a>
     </div>
+
     <!-- HERO -->
     <section id="inicio">
       <div class="hero-bg"></div>
       <div class="hero-overlay"></div>
       <div class="hero-content">
+        <div class="hero-logo-area">
+          <div class="hero-logo">
+            <img src="logos/logo controll.png" alt="ControlMotion" />
+          </div>
+        </div>
         <div class="hero-badge">
           <div class="dot"></div>
           Mais de 10 Anos de Experiência
@@ -94,7 +101,7 @@
         </p>
         <div class="hero-btns">
           <a
-            href="https://wa.me/5511999999999"
+            href="https://wa.me/5518998144019"
             target="_blank"
             rel="noopener noreferrer"
             class="btn-primary"
@@ -122,6 +129,7 @@
         </div>
       </div>
     </section>
+
     <!-- STATS -->
     <section id="stats">
       <div class="stats-grid">
@@ -181,144 +189,199 @@
         </div>
       </div>
     </section>
-    <!-- SERVICES -->
+
+    <section id="sobre" class="about-section">
+      <!-- SOBRE NÓS -->
+      <div class="about-container">
+        <!-- MISSÃO + VISÃO -->
+        <div class="about-grid-top">
+          <!-- MISSÃO -->
+          <div class="about-box">
+            <div class="about-header">
+              <div class="icon-box">
+                <i data-lucide="target"></i>
+              </div>
+              <h2>Missão</h2>
+            </div>
+
+            <p>
+              Desenvolver soluções inteligentes em controle e automação que
+              garantam desempenho, precisão e confiabilidade aos nossos
+              clientes, promovendo movimento com tecnologia, eficiência e
+              excelência.
+            </p>
+          </div>
+
+          <!-- VISÃO -->
+          <div class="about-box">
+            <div class="about-header">
+              <div class="icon-box">
+                <i data-lucide="rocket"></i>
+              </div>
+              <h2>Visão</h2>
+            </div>
+
+            <p>
+              Ser referência nacional em soluções de controle e motion,
+              reconhecida pela inovação, confiabilidade técnica e relacionamento
+              próximo com nossos clientes.
+            </p>
+          </div>
+        </div>
+
+        <!-- VALORES -->
+        <div class="values-container">
+          <div class="about-header">
+            <div class="icon-box">
+              <i data-lucide="gem"></i>
+            </div>
+            <h2 class="titulo-valores">Valores</h2>
+          </div>
+
+          <div class="values-grid">
+            <div class="value-card">
+              <div class="mini-icon"><i data-lucide="award"></i></div>
+              <div>
+                <h3>Excelência Técnica</h3>
+                <p>
+                  Buscamos precisão, qualidade e confiabilidade em cada projeto.
+                </p>
+              </div>
+            </div>
+
+            <div class="value-card">
+              <div class="mini-icon"><i data-lucide="lightbulb"></i></div>
+              <div>
+                <h3>Inovação com Propósito</h3>
+                <p>Tecnologia só faz sentido quando resolve problemas reais.</p>
+              </div>
+            </div>
+
+            <div class="value-card">
+              <div class="mini-icon"><i data-lucide="trending-up"></i></div>
+              <div>
+                <h3>Compromisso com Resultados</h3>
+                <p>Não entregamos apenas produtos, entregamos performance.</p>
+              </div>
+            </div>
+
+            <div class="value-card">
+              <div class="mini-icon"><i data-lucide="handshake"></i></div>
+              <div>
+                <h3>Integridade e Transparência</h3>
+                <p>Relacionamentos duradouros são construídos com ética.</p>
+              </div>
+            </div>
+
+            <div class="value-card">
+              <div class="mini-icon"><i data-lucide="zap"></i></div>
+              <div>
+                <h3>Agilidade e Eficiência</h3>
+                <p>Movimento exige velocidade com controle.</p>
+              </div>
+            </div>
+
+            <div class="value-card">
+              <div class="mini-icon"><i data-lucide="refresh-cw"></i></div>
+              <div>
+                <h3>Melhoria Contínua</h3>
+                <p>
+                  Evoluímos constantemente, porque performance nunca é estática.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SERVIÇOS -->
     <section id="servicos">
-      <h2 class="section-title">NOSSOS SERVIÇOS</h2>
-      <div class="section-divider">
-        <div class="line"></div>
-        <div class="dot"></div>
-        <div class="line"></div>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <circle cx="12" cy="12" r="3" />
-              <path
-                d="M19.07 4.93a10 10 0 010 14.14M16.24 7.76a6 6 0 010 8.49M6.34 17.66a10 10 0 010-14.14M9.17 16.24a6 6 0 010-8.49"
-              />
-            </svg>
-          </div>
-          <h3>Automação Industrial</h3>
-          <p>
-            Projetos completos de automação para otimizar seus processos
-            industriais com eficiência e confiabilidade.
-          </p>
+      <div class="container">
+        <h2 class="section-title">NOSSOS SERVIÇOS</h2>
+
+        <div class="section-divider">
+          <div class="line"></div>
+          <div class="dot"></div>
+          <div class="line"></div>
         </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-            </svg>
+
+        <div class="services-grid">
+          <!-- Serviço 1 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="cpu"></i>
+            </div>
+            <h3>Programação em CLP</h3>
+            <p>
+              Desenvolvimento e programação de Controladores Lógicos
+              Programáveis para automação de processos industriais.
+            </p>
           </div>
-          <h3>Painéis Elétricos</h3>
-          <p>
-            Fabricação e manutenção de painéis elétricos sob medida, atendendo
-            todas as normas técnicas vigentes.
-          </p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-              <line x1="8" y1="21" x2="16" y2="21" />
-              <line x1="12" y1="17" x2="12" y2="21" />
-            </svg>
+
+          <!-- Serviço 2 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="zap"></i>
+            </div>
+            <h3>Painéis Elétricos</h3>
+            <p>
+              Fabricação e manutenção de painéis elétricos sob medida, atendendo
+              todas as normas técnicas vigentes.
+            </p>
           </div>
-          <h3>Sistemas Supervisórios</h3>
-          <p>
-            Implementação de SCADA e HMI para monitoramento e controle em tempo
-            real dos seus processos.
-          </p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <ellipse cx="12" cy="5" rx="9" ry="3" />
-              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
-              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
-            </svg>
+
+          <!-- Serviço 3 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="wrench"></i>
+            </div>
+            <h3>Retrofit de Máquinas</h3>
+            <p>
+              Modernização e atualização tecnológica de máquinas e equipamentos
+              industriais existentes.
+            </p>
           </div>
-          <h3>Banco de Dados</h3>
-          <p>
-            Integração e gestão de banco de dados industriais para
-            rastreabilidade e tomada de decisão.
-          </p>
+
+          <!-- Serviço 4 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="workflow"></i>
+            </div>
+            <h3>Integração de Sistemas</h3>
+            <p>
+              Conexão e integração de diferentes sistemas industriais para
+              operação unificada e eficiente.
+            </p>
+          </div>
+
+          <!-- Serviço 5 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="settings"></i>
+            </div>
+            <h3>Automação de Processos</h3>
+            <p>
+              Soluções completas de automação para otimizar a produtividade e
+              reduzir custos operacionais.
+            </p>
+          </div>
+
+          <!-- Serviço 6 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="factory"></i>
+            </div>
+            <h3>Máquinas sob Medida</h3>
+            <p>
+              Projetos personalizados de máquinas e equipamentos para atender
+              necessidades específicas da sua indústria.
+            </p>
+          </div>
         </div>
       </div>
     </section>
-    <!-- TESTIMONIAL -->
-    <section id="depoimento">
-      <div class="testimonial-inner">
-        <div class="testimonial-text">
-          <div class="quote-mark">"</div>
-          <blockquote>
-            Profissionais de confiança, o projeto ficou perfeito! Recomendo a
-            todos. Atendimento excepcional e entrega no prazo.
-          </blockquote>
-          <div>
-            <div class="stars">
-              <svg viewBox="0 0 24 24">
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                />
-              </svg>
-              <svg viewBox="0 0 24 24">
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                />
-              </svg>
-              <svg viewBox="0 0 24 24">
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                />
-              </svg>
-              <svg viewBox="0 0 24 24">
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                />
-              </svg>
-              <svg viewBox="0 0 24 24">
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                />
-              </svg>
-            </div>
-            <div class="testimonial-author">
-              <strong>Carlos M.</strong>
-              <span>Cliente Satisfeito</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-img">
-          <img
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80"
-            alt="Técnico especialista em automação"
-          />
-        </div>
-      </div>
-    </section>
-    <!-- PARTNERS -->
+
+    <!-- PARCEIROS -->
     <section id="parceiros">
       <p class="partners-label">Tecnologia de ponta para o seu negócio</p>
       <div class="partners-list">
@@ -328,7 +391,8 @@
         <div class="partner-tag">ABB</div>
       </div>
     </section>
-    <!-- CTA / CONTACT -->
+
+    <!-- CONTATO -->
     <section id="contato">
       <div class="cta-inner">
         <h2>Fale Conosco e Solicite um Orçamento!</h2>
@@ -337,7 +401,7 @@
           soluções em automação industrial.
         </p>
         <div class="cta-btns">
-          <a href="mailto:contato@controlmottion.com.br" class="btn-primary">
+          <button class="btn-primary" id="openModal">
             <svg
               width="16"
               height="16"
@@ -352,9 +416,10 @@
               <polyline points="22,6 12,13 2,6" />
             </svg>
             Entrar em Contato
-          </a>
+          </button>
+
           <a
-            href="https://wa.me/5511999999999"
+            href="https://wa.me/5518998144019"
             target="_blank"
             rel="noopener noreferrer"
             class="btn-outline"
@@ -379,7 +444,7 @@
                 d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 5.18a19.79 19.79 0 01-3.07-8.67A2 2 0 012.87 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
               />
             </svg>
-            (11) 99999-9999
+            (18) 99814-4019
           </span>
           <span>
             <svg
@@ -393,7 +458,7 @@
               />
               <polyline points="22,6 12,13 2,6" />
             </svg>
-            contato@controlmottion.com.br
+            controlmotionautomacao@gmail.com
           </span>
           <span>
             <svg
@@ -405,16 +470,37 @@
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
-            São Paulo, SP
+            Araçatuba, SP
           </span>
         </div>
       </div>
     </section>
+    <!-- formulario para -->
+    <!-- MODAL CONTATO -->
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+
+        <h2>Fale Conosco</h2>
+
+        <form id="contact-form">
+          <input id="name" placeholder="Seu nome" required />
+          <input id="email" type="email" placeholder="Seu email" required />
+          <textarea id="message" placeholder="Mensagem" required></textarea>
+
+          <button type="submit" class="btn-primary">Enviar Mensagem</button>
+        </form>
+      </div>
+    </div>
     <!-- FOOTER -->
     <footer>
       &copy; <span id="year"></span> ControlMottion — Automação &amp;
       Instrumentação Elétrica. Todos os direitos reservados.
     </footer>
+    <div id="toast" class="toast">✅ Mensagem enviada com sucesso!</div>
+    <script>
+      lucide.createIcons();
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
