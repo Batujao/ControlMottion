@@ -105,14 +105,14 @@ nav {
   color: var(--primary);
 }
 
-.nav-cta {
-  display: none;
+a.nav-cta {
+  display: none !important;
   font-size: 0.75rem;
   padding: 0.5rem 1rem;
 }
 @media (min-width: 768px) {
-  .nav-cta {
-    display: inline-flex;
+  a.nav-cta {
+    display: inline-flex !important;
   }
 }
 
