@@ -72,16 +72,41 @@ nav {
   border-radius: 50%;
 }
 
-.nav-brand span {
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-name {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
   letter-spacing: 0.05em;
   color: var(--foreground);
+  line-height: 1.1;
 }
-.nav-brand span em {
+
+.brand-name em {
   color: var(--primary);
   font-style: normal;
+}
+
+.brand-slogan {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(242, 242, 242, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .brand-slogan {
+    display: none;
+  }
 }
 
 .nav-links {
@@ -92,8 +117,13 @@ nav {
 @media (min-width: 768px) {
   .nav-links {
     display: flex;
+    /* Adicionamos estas 3 linhas para forçar o centro exato: */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
+
 .nav-links a {
   font-family: "Montserrat", sans-serif;
   font-size: 1.1rem;
@@ -109,7 +139,7 @@ nav {
 
 a.nav-cta {
   display: none !important;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   padding: 0.5rem 1rem;
 }
 @media (min-width: 768px) {
@@ -398,6 +428,7 @@ a.nav-cta {
   border-radius: 50%;
   background: #00ffaa;
   animation: pulse 2s infinite;
+  flex-shrink: 0;
 }
 .hero-content h1 {
   font-family: "Montserrat", sans-serif;
@@ -826,52 +857,47 @@ a.nav-cta {
   color: #666;
   max-width: 260px;
 }
-/* ===== PARTNERS ===== */
-#parceiros {
-  padding: 3rem 1rem;
+
+/* ===== DESTAQUE / MOTIVACIONAL ===== */
+#destaque {
+  padding: 3rem 1rem; /* Espaço reduzido no mobile */
   background: var(--dark-deep);
   text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
+
 @media (min-width: 768px) {
-  #parceiros {
-    padding: 4rem 2rem;
+  #destaque {
+    padding: 3.5rem 2rem; /* Espaço reduzido no desktop */
   }
 }
-.partners-label {
+
+.impact-container {
+  max-width: 800px; /* Container mais estreito */
+  margin: 0 auto;
+}
+
+.impact-container h2 {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 600;
-  color: var(--gray);
-  margin-bottom: 2rem;
+  font-weight: 600; /* Peso reduzido para chamar menos atenção */
+  color: var(--foreground);
+  opacity: 2rem;
+  line-height: 1.4;
+  font-size: clamp(1rem, 1.5vw, 1.35rem); /* Fonte bem menor */
 }
-.partners-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
+
+.impact-container h2 span {
+  color: var(--primary);
 }
-@media (min-width: 768px) {
-  .partners-list {
-    gap: 2.5rem;
-  }
-}
-.partner-tag {
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 700;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
-  color: var(--gray);
-  border: 1px solid var(--border);
-  opacity: 0.7;
-  transition: opacity 0.2s;
-}
-.partner-tag:hover {
-  opacity: 1;
+
+.impact-line {
+  width: 50px;
+  height: 3px; /* Linha mais fina */
+  background: var(--primary);
+  margin: 1.2rem auto 0; /* Aproximou a linha do texto */
+  border-radius: 2px;
+  box-shadow: 0 0 15px hsla(153, 100%, 27%, 0.5);
 }
 
 /* ===== CTA ===== */
