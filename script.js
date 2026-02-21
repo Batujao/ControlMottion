@@ -88,6 +88,8 @@ form.addEventListener("submit", async (e) => {
   const data = {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    company: document.getElementById("company").value,
     message: document.getElementById("message").value,
   };
 
@@ -113,4 +115,27 @@ form.addEventListener("submit", async (e) => {
     console.error(error);
     showToast();
   }
+});
+// =============================
+// MÁSCARA DE TELEFONE
+// =============================
+const phoneInput = document.getElementById("phone");
+
+phoneInput.addEventListener("input", function (e) {
+  // 1. Remove tudo que não for número (inclusive o +)
+  let value = e.target.value.replace(/\D/g, "");
+
+  // 2. Se o autocompletar colar o 55 do Brasil, nós removemos
+  if (value.startsWith("55") && value.length > 11) {
+    value = value.substring(2);
+  }
+
+  // 3. Trava o limite em 11 números puros (2 do DDD + 9 do telefone)
+  value = value.substring(0, 11);
+
+  // 4. Aplica a formatação final: (XX) XXXXX-XXXX
+  value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
+  value = value.replace(/(\d)(\d{4})$/, "$1-$2");
+
+  e.target.value = value;
 });

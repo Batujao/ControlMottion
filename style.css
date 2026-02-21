@@ -99,6 +99,8 @@ nav {
   font-size: 1.1rem;
   font-weight: 700;
   color: hsla(0, 0%, 85%, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   transition: color 0.2s;
 }
 .nav-links a:hover {
