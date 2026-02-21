@@ -57,6 +57,10 @@ nav {
 @media (min-width: 768px) {
   nav {
     padding: 0.5rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem; /* Adiciona uma margem de segurança entre os itens */
+    align-items: center;
   }
 }
 
@@ -105,22 +109,30 @@ nav {
 
 @media (max-width: 480px) {
   .brand-slogan {
-    display: none;
+    display: block; /* Remove a trava que escondia o texto */
+    font-size: 0.5rem; /* Fonte menor exclusiva para o celular */
+    white-space: normal; /* Permite que o texto quebre para a linha de baixo */
+    line-height: 1.2;
+    max-width: 180px; /* Limita a largura para não esmagar o menu hambúrguer */
   }
 }
 
 .nav-links {
   display: none;
-  gap: 4rem;
   list-style: none;
 }
+
 @media (min-width: 768px) {
   .nav-links {
     display: flex;
-    /* Adicionamos estas 3 linhas para forçar o centro exato: */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    justify-content: center;
+    gap: 1.5rem; /* Espaço para monitores menores (notebooks) */
+  }
+}
+
+@media (min-width: 1100px) {
+  .nav-links {
+    gap: 4rem; /* Volta a ficar bem espaçado em telas grandes */
   }
 }
 
@@ -145,9 +157,9 @@ a.nav-cta {
 @media (min-width: 768px) {
   a.nav-cta {
     display: inline-flex !important;
+    justify-self: end; /* Força o botão para a extrema direita */
   }
 }
-
 /* ===== HAMBURGER ===== */
 .hamburger {
   display: flex;
